@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Equilibrio Químico</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Equilibrio Químico</h1>
+        
+        <h2>Constante de Equilibrio (Kc)</h2>
+        <label for="reactantCoefficients">
+            Coeficientes de los Reactivos (separados por comas):
+            <span class="tooltip" title="Ingrese los coeficientes estequiométricos de los reactivos separados por comas.">[?]</span>
+        </label>
+        <input type="text" id="reactantCoefficients" placeholder="e.g., 1, 3">
+        
+        <label for="reactants">
+            Reactivos (concentraciones separadas por comas):
+            <span class="tooltip" title="Ingrese las concentraciones de los reactivos separados por comas.">[?]</span>
+        </label>
+        <input type="text" id="reactants" placeholder="e.g., 1.0, 2.0">
+        
+        <label for="productCoefficients">
+            Coeficientes de los Productos (separados por comas):
+            <span class="tooltip" title="Ingrese los coeficientes estequiométricos de los productos separados por comas.">[?]</span>
+        </label>
+        <input type="text" id="productCoefficients" placeholder="e.g., 2">
+        
+        <label for="products">
+            Productos (concentraciones separadas por comas):
+            <span class="tooltip" title="Ingrese las concentraciones de los productos separados por comas.">[?]</span>
+        </label>
+        <input type="text" id="products" placeholder="e.g., 0.5, 1.5">
+        
+        <button onclick="calculateKc()">Calcular Kc</button>
+        <p id="kcResult"></p>
+        
+        <div class="image-container">
+            <svg id="kcImage" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+        
+        <h2>Principio de Le Chatelier</h2>
+        <label for="change">
+            Cambio (Añadir/Eliminar reactivo o producto):
+            <span class="tooltip" title="Especifique el cambio que desea realizar, como añadir o eliminar un reactivo o producto.">[?]</span>
+        </label>
+        <input type="text" id="change" placeholder="e.g., Añadir reactivo">
+        
+        <button onclick="applyLeChatelier()">Aplicar Le Chatelier</button>
+        <p id="leChatelierResult"></p>
+        
+        <div class="image-container">
+            <svg id="leChatelierImage" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Creado por grupo Nuevo grupo 13: Equilibrio Químico y Le Chatelier; seminario Polímero :Estireno acrilonitrilo del curso SEM 1 2024 | QUÍMICA APLICADA A LA INGENIERÍA | eNQBT1003-01 de ingeniería industrial. Prohibida su reproducción.</p>
+        </footer>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
